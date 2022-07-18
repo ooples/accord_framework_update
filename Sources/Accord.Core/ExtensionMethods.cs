@@ -35,6 +35,7 @@ using System.Data;
 using Accord.Collections;
 using System.Net;
 using System.Threading;
+using System.Net.Http;
 
 /// <summary>
 ///   Static class for utility extension methods.
@@ -332,7 +333,7 @@ public static class ExtensionMethods
     /// <returns>The top (root) of the object graph.</returns>
     /// 
     [Obsolete("Please use Accord.IO.Serializer.Load<T>() instead.")]
-    public static T DeserializeAnyVersion<T>(this BinaryFormatter formatter, Stream stream)
+    public static T DeserializeAnyVersion<T>(Stream stream)
     {
         return Serializer.Load<T>(stream);
     }
@@ -646,11 +647,12 @@ public static class ExtensionMethods
 #endif
 
     // TODO: Move this method to a more appropriate location
-    internal static WebClient NewWebClient()
+    internal static HttpClient NewHttpClient(Uri url)
     {
-        var webClient = new WebClient();
-        webClient.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Accord.NET Framework)");
-        return webClient;
+        var client = new HttpClient();
+        using var request = new HttpRequestMessage(HttpMethod.Get, url);
+        request.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Accord.NET Framework)");
+        return client;
     }
 
     /// <summary>
