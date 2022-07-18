@@ -24,7 +24,6 @@ namespace Accord.Math
 {
     using Accord.Math.Random;
     using System;
-    using System.Runtime.CompilerServices;
 
     /// <summary>
     ///   Set of mathematical tools.
@@ -189,8 +188,8 @@ namespace Accord.Math
         public static double Hypotenuse(double a, double b)
         {
             double r = 0.0;
-            double absA = System.Math.Abs(a);
-            double absB = System.Math.Abs(b);
+            double absA = Math.Abs(a);
+            double absB = Math.Abs(b);
 
             if (absA > absB)
             {
@@ -218,8 +217,8 @@ namespace Accord.Math
         public static decimal Hypotenuse(decimal a, decimal b)
         {
             decimal r = 0;
-            decimal absA = System.Math.Abs(a);
-            decimal absB = System.Math.Abs(b);
+            decimal absA = Math.Abs(a);
+            decimal absB = Math.Abs(b);
 
             if (absA > absB)
             {
@@ -247,18 +246,18 @@ namespace Accord.Math
         public static float Hypotenuse(float a, float b)
         {
             double r = 0;
-            float absA = System.Math.Abs(a);
-            float absB = System.Math.Abs(b);
+            float absA = Math.Abs(a);
+            float absB = Math.Abs(b);
 
             if (absA > absB)
             {
                 r = b / a;
-                r = absA * System.Math.Sqrt(1 + r * r);
+                r = absA * Math.Sqrt(1 + r * r);
             }
             else if (b != 0)
             {
                 r = a / b;
-                r = absB * System.Math.Sqrt(1 + r * r);
+                r = absB * Math.Sqrt(1 + r * r);
             }
 
             return (float)r;
@@ -304,7 +303,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static int Scale(this IntRange from, IntRange to, int x)
         {
-            return Accord.Math.Vector.Scale(x, (IRange<int>)from, (IRange<int>)to);
+            return Vector.Scale(x, from, to);
         }
 
         /// <summary>
@@ -315,7 +314,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static double Scale(this DoubleRange from, DoubleRange to, double x)
         {
-            return Accord.Math.Vector.Scale(x, from, to);
+            return Vector.Scale(x, from, to);
         }
 
         /// <summary>
@@ -326,7 +325,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static double Scale(double fromMin, double fromMax, double toMin, double toMax, double x)
         {
-            return Accord.Math.Vector.Scale(x, fromMin, fromMax, toMin, toMax);
+            return Vector.Scale(x, fromMin, fromMax, toMin, toMax);
         }
 
         /// <summary>
@@ -337,7 +336,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static double[] Scale(double fromMin, double fromMax, double toMin, double toMax, double[] x)
         {
-            return Accord.Math.Vector.Scale(x, fromMin, fromMax, toMin, toMax);
+            return Vector.Scale(x, fromMin, fromMax, toMin, toMax);
         }
 
         /// <summary>
@@ -348,7 +347,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static int[] Scale(int fromMin, int fromMax, int toMin, int toMax, int[] x)
         {
-            return Accord.Math.Vector.Scale(x, fromMin, fromMax, toMin, toMax);
+            return Vector.Scale(x, fromMin, fromMax, toMin, toMax);
         }
 
         /// <summary>
@@ -359,7 +358,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static int[] Scale(IntRange from, IntRange to, int[] x)
         {
-            return Accord.Math.Vector.Scale(x, (IRange<int>)from, (IRange<int>)to);
+            return Vector.Scale(x, from, to);
         }
 
         /// <summary>
@@ -370,7 +369,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static double[] Scale(DoubleRange from, DoubleRange to, double[] x)
         {
-            return Accord.Math.Vector.Scale(values: x, fromRange: from, toRange: to);
+            return Vector.Scale(values: x, fromRange: from, toRange: to);
         }
 
         /// <summary>
@@ -381,7 +380,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static float[] Scale(float fromMin, float fromMax, float toMin, float toMax, float[] x)
         {
-            return Accord.Math.Vector.Scale(x, fromMin, fromMax, toMin, toMax);
+            return Vector.Scale(x, fromMin, fromMax, toMin, toMax);
         }
 
         /// <summary>
@@ -390,9 +389,9 @@ namespace Accord.Math
         /// </summary>
         /// 
         [Obsolete("Please use Vector.Scale instead.")]
-        public static float[] Scale(Range from, Range to, float[] x)
+        public static float[] Scale(Accord.Range from, Accord.Range to, float[] x)
         {
-            return Accord.Math.Vector.Scale(x, (IRange<float>)from, (IRange<float>)to);
+            return Vector.Scale(x, from, to);
         }
 
         /// <summary>
@@ -403,7 +402,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static double[] Scale(double toMin, double toMax, double[] x)
         {
-            return Accord.Math.Vector.Scale(x, toMin, toMax);
+            return Vector.Scale(x, toMin, toMax);
         }
 
         /// <summary>
@@ -509,7 +508,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static float Scale(float fromMin, float fromMax, float toMin, float toMax, float x)
         {
-            return Accord.Math.Vector.Scale(x, fromMin, fromMax, toMin, toMax);
+            return Vector.Scale(x, fromMin, fromMax, toMin, toMax);
         }
 
         /// <summary>
@@ -520,7 +519,7 @@ namespace Accord.Math
         [Obsolete("Please use Vector.Scale instead.")]
         public static double Scale(IntRange from, DoubleRange to, int x)
         {
-            return Accord.Math.Vector.Scale(x, from, to);
+            return Vector.Scale(x, from, to);
         }
         #endregion
 

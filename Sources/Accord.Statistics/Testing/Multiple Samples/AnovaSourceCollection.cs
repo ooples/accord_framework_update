@@ -20,29 +20,27 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-namespace Accord.Statistics.Testing
+namespace Accord.Statistics.Testing;
+
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+/// <summary>
+///   ANOVA's result table.
+/// </summary>
+///
+/// <remarks>
+///   This class represents the results obtained from an <see cref="IAnova">ANOVA experiment</see>.
+/// </remarks>
+///
+[Serializable]
+public class AnovaSourceCollection : ReadOnlyCollection<AnovaVariationSource>
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using Accord.Compat;
+    internal AnovaSourceCollection(params AnovaVariationSource[] rows)
+        : base(rows) { }
 
-    /// <summary>
-    ///   ANOVA's result table.
-    /// </summary>
-    ///
-    /// <remarks>
-    ///   This class represents the results obtained from an <see cref="IAnova">ANOVA experiment</see>.
-    /// </remarks>
-    ///
-    [Serializable]
-    public class AnovaSourceCollection : ReadOnlyCollection<AnovaVariationSource>
-    {
-        internal AnovaSourceCollection(params AnovaVariationSource[] rows)
-            : base(rows) { }
-
-        internal AnovaSourceCollection(IList<AnovaVariationSource> rows)
-            : base(rows) { }
-    }
-
+    internal AnovaSourceCollection(IList<AnovaVariationSource> rows)
+        : base(rows) { }
 }
+

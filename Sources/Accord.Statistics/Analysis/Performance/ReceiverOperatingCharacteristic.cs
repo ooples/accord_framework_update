@@ -31,7 +31,6 @@ namespace Accord.Statistics.Analysis
     using Accord.Math;
     using Accord.Statistics.Visualizations;
     using Accord.Statistics.Testing;
-    using Accord.Compat;
 
     /// <summary>
     ///   Methods for computing the area under <see cref="ReceiverOperatingCharacteristic">
@@ -225,7 +224,7 @@ namespace Accord.Statistics.Analysis
             for (int i = 0; i < dactual.Length; i++)
                 dactual[i] = actual[i];
 
-            init(dexpected, dactual);
+            Init(dexpected, dactual);
         }
 
         /// <summary>
@@ -246,7 +245,7 @@ namespace Accord.Statistics.Analysis
             if (expected.Length != actual.Length)
                 throw new ArgumentException("The size of the measurement and prediction arrays must match.");
 
-            init(expected.ToDouble(), actual);
+            Init(expected.ToDouble(), actual);
         }
 
         /// <summary>
@@ -267,13 +266,13 @@ namespace Accord.Statistics.Analysis
             if (expected.Length != actual.Length)
                 throw new ArgumentException("The size of the measurement and prediction arrays must match.");
 
-            init(expected, actual);
+            Init(expected, actual);
         }
 
-        private void init(double[] expected, double[] actual)
+        private void Init(double[] expected, double[] actual)
         {
-            this.measurement = expected;
-            this.prediction = actual;
+            measurement = expected;
+            prediction = actual;
 
             // Determine which numbers correspond to each binary category
             dtrue = dfalse = expected[0];
@@ -287,16 +286,16 @@ namespace Accord.Statistics.Analysis
             for (int i = 0; i < expected.Length; i++)
             {
                 if (expected[i] == dtrue)
-                    this.positiveCount++;
+                    positiveCount++;
             }
 
             min = actual.Min();
             max = actual.Max();
 
             // Negative cases is just the number of cases minus the number of positives
-            this.negativeCount = this.measurement.Length - this.positiveCount;
+            negativeCount = measurement.Length - positiveCount;
 
-            this.calculatePlacements();
+            calculatePlacements();
         }
 
 
@@ -569,7 +568,7 @@ namespace Accord.Statistics.Analysis
         /// 
         public Scatterplot GetScatterplot(bool includeRandom = false)
         {
-            Scatterplot plot = new Scatterplot("Area under the ROC curve");
+            Scatterplot plot = new("Area under the ROC curve");
 
             plot.XAxisTitle = "1 - Specificity";
             plot.YAxisTitle = "Sensitivity";
@@ -694,7 +693,7 @@ namespace Accord.Statistics.Analysis
 
 
         [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
+        private void OnDeserialized(StreamingContext context)
         {
             min = dfalse;
             max = dtrue;
@@ -703,7 +702,7 @@ namespace Accord.Statistics.Analysis
         }
 
         [OnDeserializing]
-        private void onDeserializing(StreamingContext context)
+        private void OnDeserializing(StreamingContext context)
         {
             min = max = 0;
         }
@@ -717,7 +716,7 @@ namespace Accord.Statistics.Analysis
         /// 
         public void Save(Stream stream)
         {
-            BinaryFormatter b = new BinaryFormatter();
+            BinaryFormatter b = new();
             b.Serialize(stream, this);
         }
 
@@ -731,7 +730,7 @@ namespace Accord.Statistics.Analysis
         /// 
         public static ReceiverOperatingCharacteristic Load(Stream stream)
         {
-            BinaryFormatter b = new BinaryFormatter();
+            BinaryFormatter b = new();
             return (ReceiverOperatingCharacteristic)b.Deserialize(stream);
         }
 
@@ -745,10 +744,8 @@ namespace Accord.Statistics.Analysis
         /// 
         public static ReceiverOperatingCharacteristic Load(string path)
         {
-            using (FileStream fs = new FileStream(path, FileMode.Open))
-            {
-                return Load(fs);
-            }
+            using FileStream fs = new(path, FileMode.Open);
+            return Load(fs);
         }
 
         /// <summary>
@@ -757,12 +754,10 @@ namespace Accord.Statistics.Analysis
         /// 
         /// <param name="path">The path to the file to which the curve is to be serialized.</param>
         /// 
-        public void Save(String path)
+        public void Save(string path)
         {
-            using (FileStream fs = new FileStream(path, FileMode.Create))
-            {
-                Save(fs);
-            }
+            using FileStream fs = new(path, FileMode.Create);
+            Save(fs);
         }
     }
 
@@ -776,7 +771,7 @@ namespace Accord.Statistics.Analysis
     {
 
         // Discrimination threshold (cutoff value)
-        private double cutoff;
+        private readonly double cutoff;
 
 
         /// <summary>
@@ -808,7 +803,7 @@ namespace Accord.Statistics.Analysis
         /// 
         public override string ToString()
         {
-            return String.Format(System.Globalization.CultureInfo.CurrentCulture,
+            return string.Format(System.Globalization.CultureInfo.CurrentCulture,
                 "({0}; {1})", Sensitivity, FalsePositiveRate);
         }
 
@@ -837,8 +832,8 @@ namespace Accord.Statistics.Analysis
         /// 
         public double[][] GetXYValues()
         {
-            double[] x = new double[this.Count];
-            double[] y = new double[this.Count];
+            double[] x = new double[Count];
+            double[] y = new double[Count];
 
             for (int i = 0; i < Count; i++)
             {
@@ -846,7 +841,7 @@ namespace Accord.Statistics.Analysis
                 y[i] = this[i].Sensitivity;
             }
 
-            double[][] points = new double[this.Count][];
+            double[][] points = new double[Count][];
             for (int i = 0; i < points.Length; i++)
                 points[i] = new[] { x[i], y[i] };
 
@@ -860,7 +855,7 @@ namespace Accord.Statistics.Analysis
         /// 
         public double[] GetOneMinusSpecificity()
         {
-            double[] x = new double[this.Count];
+            double[] x = new double[Count];
             for (int i = 0; i < x.Length; i++)
                 x[i] = 1.0 - this[i].Specificity;
             return x;
@@ -873,7 +868,7 @@ namespace Accord.Statistics.Analysis
         /// 
         public double[] GetSensitivity()
         {
-            double[] y = new double[this.Count];
+            double[] y = new double[Count];
             for (int i = 0; i < y.Length; i++)
                 y[i] = this[i].Sensitivity;
             return y;

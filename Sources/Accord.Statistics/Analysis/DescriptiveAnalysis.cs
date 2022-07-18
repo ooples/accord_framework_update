@@ -127,7 +127,7 @@ namespace Accord.Statistics.Analysis
             if (columnNames == null)
                 throw new ArgumentNullException("columnNames");
 
-            init(null, null, columnNames);
+            Init(null, null, columnNames);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Accord.Statistics.Analysis
 
             System.Buffer.BlockCopy(data, 0, matrix, 0, data.Length * sizeof(double));
 
-            init(matrix, null, null);
+            Init(matrix, null, null);
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Accord.Statistics.Analysis
             if (data == null)
                 throw new ArgumentNullException("data");
 
-            init(data, null, null);
+            Init(data, null, null);
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Accord.Statistics.Analysis
             if (columnNames == null)
                 throw new ArgumentNullException("columnNames");
 
-            init(data, null, columnNames);
+            Init(data, null, columnNames);
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Accord.Statistics.Analysis
             if (data == null)
                 throw new ArgumentNullException("data");
 
-            init(null, data, null);
+            Init(null, data, null);
         }
 
         /// <summary>
@@ -216,24 +216,24 @@ namespace Accord.Statistics.Analysis
             if (columnNames == null)
                 throw new ArgumentNullException("columnNames");
 
-            init(null, data, columnNames);
+            Init(null, data, columnNames);
         }
 
-        private void init(double[,] matrix, double[][] array, string[] columnNames)
+        private void Init(double[,] matrix, double[][] array, string[] columnNames)
         {
-            this.sourceMatrix = matrix;
-            this.sourceArray = array;
+            sourceMatrix = matrix;
+            sourceArray = array;
             this.columnNames = columnNames;
 
             if (matrix != null)
             {
-                this.samples = matrix.GetLength(0);
-                this.variables = matrix.GetLength(1);
+                samples = matrix.GetLength(0);
+                variables = matrix.GetLength(1);
             }
             else if (array != null)
             {
-                this.samples = array.Length;
-                this.variables = array[0].Length;
+                samples = array.Length;
+                variables = array[0].Length;
             }
             else
             {
@@ -244,7 +244,7 @@ namespace Accord.Statistics.Analysis
             DescriptiveMeasures[] measures = new DescriptiveMeasures[variables];
             for (int i = 0; i < measures.Length; i++)
                 measures[i] = new DescriptiveMeasures(this, i);
-            this.measuresCollection = new DescriptiveMeasureCollection(measures);
+            measuresCollection = new DescriptiveMeasureCollection(measures);
         }
 
 
@@ -258,54 +258,54 @@ namespace Accord.Statistics.Analysis
             // Clear analysis
             reset();
 
-            this.sums = Sums;
-            this.means = Means;
-            this.standardDeviations = StandardDeviations;
-            this.ranges = Ranges;
-            this.kurtosis = Kurtosis;
-            this.skewness = Skewness;
-            this.medians = Medians;
-            this.modes = Modes;
-            this.variances = Variances;
-            this.standardErrors = StandardErrors;
-            this.distinct = Distinct;
-            this.quartiles = Quartiles;
-            this.innerFences = InnerFences;
-            this.outerFences = OuterFences;
+            sums = Sums;
+            means = Means;
+            standardDeviations = StandardDeviations;
+            ranges = Ranges;
+            kurtosis = Kurtosis;
+            skewness = Skewness;
+            medians = Medians;
+            modes = Modes;
+            variances = Variances;
+            standardErrors = StandardErrors;
+            distinct = Distinct;
+            quartiles = Quartiles;
+            innerFences = InnerFences;
+            outerFences = OuterFences;
 
             // Mean centered and standardized data
-            this.dScores = DeviationScores;
-            this.zScores = StandardScores;
+            dScores = DeviationScores;
+            zScores = StandardScores;
 
             // Covariance and correlation
-            this.covarianceMatrix = CovarianceMatrix;
-            this.correlationMatrix = CorrelationMatrix;
+            covarianceMatrix = CovarianceMatrix;
+            correlationMatrix = CorrelationMatrix;
 
-            this.confidence = Confidence;
-            this.deviance = Deviance;
+            confidence = Confidence;
+            deviance = Deviance;
         }
 
         private void reset()
         {
-            this.sums = null;
-            this.means = null;
-            this.standardDeviations = null;
-            this.ranges = null;
-            this.kurtosis = null;
-            this.skewness = null;
-            this.medians = null;
-            this.modes = null;
-            this.variances = null;
-            this.standardErrors = null;
-            this.distinct = null;
-            this.dScores = null;
-            this.zScores = null;
-            this.covarianceMatrix = null;
-            this.correlationMatrix = null;
-            this.deviance = null;
-            this.quartiles = null;
-            this.innerFences = null;
-            this.outerFences = null;
+            sums = null;
+            means = null;
+            standardDeviations = null;
+            ranges = null;
+            kurtosis = null;
+            skewness = null;
+            medians = null;
+            modes = null;
+            variances = null;
+            standardErrors = null;
+            distinct = null;
+            dScores = null;
+            zScores = null;
+            covarianceMatrix = null;
+            correlationMatrix = null;
+            deviance = null;
+            quartiles = null;
+            innerFences = null;
+            outerFences = null;
         }
 
         /// <summary>
@@ -320,38 +320,38 @@ namespace Accord.Statistics.Analysis
         {
             reset();
 
-            init(null, x, columnNames);
+            Init(null, x, columnNames);
 
             if (!lazy)
             {
-                this.sums = Sums;
-                this.means = Means;
-                this.standardDeviations = StandardDeviations;
-                this.ranges = Ranges;
-                this.kurtosis = Kurtosis;
-                this.skewness = Skewness;
-                this.medians = Medians;
-                this.modes = Modes;
-                this.variances = Variances;
-                this.standardErrors = StandardErrors;
-                this.distinct = Distinct;
-                this.quartiles = Quartiles;
-                this.innerFences = InnerFences;
-                this.outerFences = OuterFences;
+                sums = Sums;
+                means = Means;
+                standardDeviations = StandardDeviations;
+                ranges = Ranges;
+                kurtosis = Kurtosis;
+                skewness = Skewness;
+                medians = Medians;
+                modes = Modes;
+                variances = Variances;
+                standardErrors = StandardErrors;
+                distinct = Distinct;
+                quartiles = Quartiles;
+                innerFences = InnerFences;
+                outerFences = OuterFences;
 
                 // Mean centered and standardized data
-                this.dScores = DeviationScores;
-                this.zScores = StandardScores;
+                dScores = DeviationScores;
+                zScores = StandardScores;
 
                 // Covariance and correlation
-                this.covarianceMatrix = CovarianceMatrix;
-                this.correlationMatrix = CorrelationMatrix;
+                covarianceMatrix = CovarianceMatrix;
+                correlationMatrix = CorrelationMatrix;
 
-                this.confidence = Confidence;
-                this.deviance = Deviance;
+                confidence = Confidence;
+                deviance = Deviance;
 
-                this.sourceArray = null;
-                this.sourceMatrix = null;
+                sourceArray = null;
+                sourceMatrix = null;
             }
 
             return this;
@@ -379,7 +379,7 @@ namespace Accord.Statistics.Analysis
         {
             get
             {
-                if (this.sourceMatrix == null)
+                if (sourceMatrix == null)
                     sourceMatrix = sourceArray.ToMatrix();
                 return sourceMatrix;
             }
@@ -394,7 +394,7 @@ namespace Accord.Statistics.Analysis
         {
             get
             {
-                if (this.sourceArray == null)
+                if (sourceArray == null)
                     sourceArray = sourceMatrix.ToJagged();
                 return sourceArray;
             }
@@ -416,7 +416,7 @@ namespace Accord.Statistics.Analysis
         ///   Gets the column names from the variables in the data.
         /// </summary>
         /// 
-        public String[] ColumnNames
+        public string[] ColumnNames
         {
             get
             {
@@ -427,11 +427,11 @@ namespace Accord.Statistics.Analysis
                         columnNames[i] = "Column " + i;
                 }
 
-                return this.columnNames;
+                return columnNames;
             }
             set
             {
-                this.columnNames = value;
+                columnNames = value;
             }
         }
 
@@ -443,14 +443,14 @@ namespace Accord.Statistics.Analysis
         {
             get
             {
-                if (this.dScores == null)
+                if (dScores == null)
                 {
                     if (sourceMatrix != null)
-                        this.dScores = sourceMatrix.Center(Means, inPlace: false);
-                    else this.dScores = sourceArray.Center(Means, inPlace: false).ToMatrix();
+                        dScores = sourceMatrix.Center(Means, inPlace: false);
+                    else dScores = sourceArray.Center(Means, inPlace: false).ToMatrix();
                 }
 
-                return this.dScores;
+                return dScores;
             }
         }
 
@@ -462,9 +462,9 @@ namespace Accord.Statistics.Analysis
         {
             get
             {
-                if (this.zScores == null)
-                    this.zScores = Statistics.Tools.Standardize(DeviationScores, StandardDeviations, inPlace: false);
-                return this.zScores;
+                if (zScores == null)
+                    zScores = Statistics.Tools.Standardize(DeviationScores, StandardDeviations, inPlace: false);
+                return zScores;
             }
         }
 
@@ -689,8 +689,8 @@ namespace Accord.Statistics.Analysis
                 if (ranges == null)
                 {
                     if (sourceMatrix != null)
-                        this.ranges = Matrix.GetRange(sourceMatrix, 0);
-                    else this.ranges = Matrix.GetRange(sourceArray, 0);
+                        ranges = Matrix.GetRange(sourceMatrix, 0);
+                    else ranges = Matrix.GetRange(sourceArray, 0);
                 }
 
                 return ranges;
@@ -708,8 +708,8 @@ namespace Accord.Statistics.Analysis
                 if (quartiles == null)
                 {
                     if (sourceMatrix != null)
-                        this.medians = sourceMatrix.Quartiles(out this.quartiles, type: quantileMethod);
-                    else this.medians = sourceArray.Quartiles(out this.quartiles, type: quantileMethod);
+                        medians = sourceMatrix.Quartiles(out quartiles, type: quantileMethod);
+                    else medians = sourceArray.Quartiles(out quartiles, type: quantileMethod);
                 }
 
                 return quartiles;
@@ -769,8 +769,8 @@ namespace Accord.Statistics.Analysis
                 if (sums == null)
                 {
                     if (sourceMatrix != null)
-                        this.sums = Accord.Math.Matrix.Sum(sourceMatrix, 0);
-                    else this.sums = Accord.Math.Matrix.Sum(sourceArray, 0);
+                        sums = Accord.Math.Matrix.Sum(sourceMatrix, 0);
+                    else sums = Accord.Math.Matrix.Sum(sourceArray, 0);
                 }
 
                 return sums;
@@ -788,8 +788,8 @@ namespace Accord.Statistics.Analysis
                 if (skewness == null)
                 {
                     if (sourceMatrix != null)
-                        this.skewness = sourceMatrix.Skewness();
-                    else this.skewness = sourceArray.Skewness();
+                        skewness = sourceMatrix.Skewness();
+                    else skewness = sourceArray.Skewness();
                 }
 
                 return skewness;
@@ -807,8 +807,8 @@ namespace Accord.Statistics.Analysis
                 if (kurtosis == null)
                 {
                     if (sourceMatrix != null)
-                        this.kurtosis = sourceMatrix.Kurtosis();
-                    else this.kurtosis = sourceArray.Kurtosis();
+                        kurtosis = sourceMatrix.Kurtosis();
+                    else kurtosis = sourceArray.Kurtosis();
                 }
 
                 return kurtosis;
