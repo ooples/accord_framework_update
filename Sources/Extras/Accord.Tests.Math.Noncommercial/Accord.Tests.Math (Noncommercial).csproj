@@ -60,14 +60,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Accord.Math.Noncommercial\Accord.Math %28Noncommercial%29.csproj">
       <Project>{1a83af16-1ac8-45e3-9e7e-fa7248c7cbcb}</Project>
       <Name>Accord.Math %28Noncommercial%29</Name>

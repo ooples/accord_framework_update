@@ -4,6 +4,8 @@
     <ProjectGuid>{22627578-4022-453B-BA9A-76ED7F6F4E77}</ProjectGuid>
     <RootNamespace>Accord.Text</RootNamespace>
     <AssemblyName>Accord.Text</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="..\Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -76,27 +78,6 @@
     <Compile Include="Text\Stemmers\Languages\TurkishStemmer.generated.cs" />
     <Compile Include="Text\ExtensionMethods.cs" />
     <Compile Include="Tools.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Math.Core\Accord.Math.Core.csproj">
-      <Project>{ed3a336f-6da2-4f34-87fe-1ccffa029f8c}</Project>
-      <Name>Accord.Math.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />

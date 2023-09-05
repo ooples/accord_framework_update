@@ -105,24 +105,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
-      <Project>{a177a90c-8207-466a-af70-f2b8452a42ac}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math.Core\Accord.Math.Core.csproj">
-      <Project>{ed3a336f-6da2-4f34-87fe-1ccffa029f8c}</Project>
-      <Name>Accord.Math.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Project>{f718e9a8-db62-4785-8c49-4333a60d256a}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{fd8101dd-c95d-42d6-ad44-ae01c25f2811}</Project>
-      <Name>Accord.Statistics</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

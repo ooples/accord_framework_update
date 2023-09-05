@@ -4,6 +4,8 @@
     <ProjectGuid>{4959A83D-F78F-439E-80A5-41583ECEAAC6}</ProjectGuid>
     <RootNamespace>Accord.Imaging</RootNamespace>
     <AssemblyName>Accord.Imaging</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="..\Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -354,15 +356,6 @@
     <ProjectReference Include="..\Accord.Math.Core\Accord.Math.Core.csproj">
       <Project>{ed3a336f-6da2-4f34-87fe-1ccffa029f8c}</Project>
       <Name>Accord.Math.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{fd8101dd-c95d-42d6-ad44-ae01c25f2811}</Project>
-      <Name>Accord.Statistics</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

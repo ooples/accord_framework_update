@@ -62,18 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Imaging\Accord.Imaging.csproj">
-      <Project>{4959a83d-f78f-439e-80a5-41583eceaac6}</Project>
-      <Name>Accord.Imaging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Accord.Imaging.Noncommercial\Accord.Imaging %28Noncommercial%29.csproj">
       <Project>{44bb1934-5bff-4a7b-8bf9-6f30043eb0d3}</Project>
       <Name>Accord.Imaging %28Noncommercial%29</Name>

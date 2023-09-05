@@ -4,6 +4,8 @@
     <ProjectGuid>{E7B65F08-82F1-438F-847A-2AAC2BEC9AC0}</ProjectGuid>
     <RootNamespace>Accord.Audio</RootNamespace>
     <AssemblyName>Accord.Audio</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="$(SolutionDir)Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

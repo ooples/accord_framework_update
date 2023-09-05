@@ -4,6 +4,8 @@
     <ProjectGuid>{CDBEFB1A-10BC-49EC-9833-D2CF6D4F6131}</ProjectGuid>
     <RootNamespace>Accord.Audition</RootNamespace>
     <AssemblyName>Accord.Audition</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="..\Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -62,11 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Accord.Audio\Accord.Audio.csproj">
-      <Project>{E7B65F08-82F1-438F-847A-2AAC2BEC9AC0}</Project>
-      <Name>Accord.Audio</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\Accord.Core\Accord.Core.csproj">
       <Project>{a177a90c-8207-466a-af70-f2b8452a42ac}</Project>
       <Name>Accord.Core</Name>

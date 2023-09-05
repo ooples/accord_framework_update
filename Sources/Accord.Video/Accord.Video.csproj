@@ -4,6 +4,8 @@
     <ProjectGuid>{809725DC-6502-4732-A51C-DEB7FEA12975}</ProjectGuid>
     <RootNamespace>Accord.Video</RootNamespace>
     <AssemblyName>Accord.Video</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="..\Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -96,20 +98,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Accord.Core\Accord.Core.csproj">
-      <Project>{a177a90c-8207-466a-af70-f2b8452a42ac}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Imaging\Accord.Imaging.csproj">
-      <Project>{4959a83d-f78f-439e-80a5-41583eceaac6}</Project>
-      <Name>Accord.Imaging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Math\Accord.Math.csproj">
-      <Project>{f718e9a8-db62-4785-8c49-4333a60d256a}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.Video.cd" />

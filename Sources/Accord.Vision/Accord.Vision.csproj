@@ -4,6 +4,8 @@
     <ProjectGuid>{C70A159D-74A4-405F-9A7F-C17ACF451CCA}</ProjectGuid>
     <RootNamespace>Accord.Vision</RootNamespace>
     <AssemblyName>Accord.Vision</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="..\Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -99,26 +101,6 @@
     <ProjectReference Include="..\Accord.Core\Accord.Core.csproj">
       <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
       <Name>Accord.Core</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Imaging\Accord.Imaging.csproj">
-      <Project>{4959A83D-F78F-439E-80A5-41583ECEAAC6}</Project>
-      <Name>Accord.Imaging</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.MachineLearning\Accord.MachineLearning.csproj">
-      <Project>{7AB4BBCC-6222-423D-9FF9-BA9CB7C09199}</Project>
-      <Name>Accord.MachineLearning</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

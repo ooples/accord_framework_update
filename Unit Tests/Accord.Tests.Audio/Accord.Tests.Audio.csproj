@@ -114,40 +114,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Audio.DirectSound\Accord.Audio.DirectSound.csproj">
-      <Project>{456db2e8-745a-4f87-a2bd-c43cf8677770}</Project>
-      <Name>Accord.Audio.DirectSound</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Audio\Accord.Audio.csproj">
-      <Project>{E7B65F08-82F1-438F-847A-2AAC2BEC9AC0}</Project>
-      <Name>Accord.Audio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Audition\Accord.Audition.csproj">
-      <Project>{CDBEFB1A-10BC-49EC-9833-D2CF6D4F6131}</Project>
-      <Name>Accord.Audition</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
-      <Project>{a177a90c-8207-466a-af70-f2b8452a42ac}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Accord.MachineLearning.csproj">
-      <Project>{7AB4BBCC-6222-423D-9FF9-BA9CB7C09199}</Project>
-      <Name>Accord.MachineLearning</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math.Core\Accord.Math.Core.csproj">
-      <Project>{ed3a336f-6da2-4f34-87fe-1ccffa029f8c}</Project>
-      <Name>Accord.Math.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>

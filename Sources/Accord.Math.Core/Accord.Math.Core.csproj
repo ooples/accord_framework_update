@@ -4,6 +4,8 @@
     <ProjectGuid>{ED3A336F-6DA2-4F34-87FE-1CCFFA029F8C}</ProjectGuid>
     <RootNamespace>Accord.Math</RootNamespace>
     <AssemblyName>Accord.Math.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <Import Project="..\Accord.NET.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -142,11 +144,5 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Matrix.Elementwise2.tt</DependentUpon>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Accord.Core\Accord.Core.csproj">
-      <Project>{a177a90c-8207-466a-af70-f2b8452a42ac}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
