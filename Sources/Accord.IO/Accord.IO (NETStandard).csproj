@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>Accord.IO</AssemblyName>
@@ -21,7 +21,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="SharpZipLib" Version="0.86.0.0" />
+        <PackageReference Include="SharpZipLib" Version="1.3.3" />
       </ItemGroup>
     </Otherwise>
   </Choose>
