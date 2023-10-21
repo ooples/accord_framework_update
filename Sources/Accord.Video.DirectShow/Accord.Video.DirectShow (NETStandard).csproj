@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>Accord.Video.DirectShow</AssemblyName>
@@ -24,7 +24,7 @@
   </Choose>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="4.5.0-preview1-25914-04" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.2" />
   </ItemGroup>
 
   <ItemGroup>
